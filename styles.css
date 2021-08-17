@@ -1,0 +1,525 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./roboto-regular-webfont.woff2') format('woff2'),
+         url('./roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+html,
+body
+{
+    margin:0;
+    padding:0;
+}
+
+/* COBADGING */
+
+form.payment-paymentmethodform #payment-cardnumber-cobadging-container {
+    display: none;
+    font-family: 'Roboto', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+form.payment-paymentmethodform #payment-cardnumber-cobadging-container {
+    display: none;
+    font-family: 'Roboto', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+form.payment-paymentmethodform #payment-cardnumber-cobadging-link {
+    display: none;
+    float: right;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-align: right;
+}
+
+form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-container {
+    display: none;
+    border: 1px solid #CCCACA;
+    background: #F6F6F6;
+    margin-top: 4px;
+}
+
+form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-label {
+    display: none;
+    color: #4E4745;
+    margin: 12px;
+    line-height: 1.25;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+}
+
+form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist {
+    display: none;
+    margin: 0 11px;
+    text-align: center;
+}
+
+form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.brandlabel {
+    display: inline-block;
+    width: auto;
+    margin: 0 5px;
+    margin-bottom: 8px;
+    background: #ffffff;
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+form.payment-paymentmethodform .brandlogo {
+    height: 40px;
+    float: left;
+    vertical-align: middle;
+}
+
+form.payment-paymentmethodform .css-hidden {
+    position: absolute;
+    left: -9999px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* COBADGING END */
+body
+{
+    background-color:#f6f6f6;
+    font-family: Roboto,"sans-serif";
+    font-weight:400;
+    color:#4E4745;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.hidden
+{
+	display: none;
+}
+
+.clear
+{
+    clear:both;
+}
+
+a
+{
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -ms-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s;
+}
+a:hover
+{
+    color:#007789;
+}
+.error
+{
+    color:red;
+}
+
+/* remove iOS inputs styling */
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+.input-checkbox {
+    -webkit-appearance: none;
+}
+
+
+.main-content
+{
+    padding:20px;
+}
+
+.main-content .paymentpart,
+.main-content .orderpart
+{
+    vertical-align: top;
+    display:inline-block;
+    background: #FFFFFF;
+    border: 1px solid rgba(68, 69, 73, 0.15);
+    margin: 0;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 24px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+
+
+
+
+/* CHECKBOXES */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+}
+.main-content .paymentpart .row.aliascreation label
+{
+    height:50px;
+    display: table-cell;
+    vertical-align: middle;
+}
+/* label */
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 70px;
+    cursor: pointer;
+
+    display:table-cell;
+    vertical-align: middle;
+    height:50px;
+
+    font-weight:500;
+    font-size:17px;
+}
+/* box */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #CCCACA;
+    background: #fff;
+    border-radius: 4px;
+    margin-top:auto;
+    margin-bottom:auto;
+    line-height:0;
+}
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+    content: '--';
+    font-family: Arial, serif;
+    color:transparent;
+    line-height: 35px;
+    position: absolute;
+    top: 12px;
+    left: 7px;
+    font-size: 65px;
+    background: url("https://ingenico.pixfactory.eu/templates/images/check.png") no-repeat;
+    background-size: 37px 29px;
+    -webkit-background-size: 37px 29px;
+}
+/* unchecked */
+[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+/* checked */
+[type="checkbox"]:checked + label:after {
+    opacity: 1; /* coche opaque */
+    transform: scale(1); /* mise Ã  l'Ã©chelle 1:1 */
+}
+/* disabled */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+}
+/* check mark */
+[type="checkbox"]:disabled:checked + label:after {
+    color: #999;
+}
+[type="checkbox"]:disabled + label {
+    color: #aaa;
+}
+/* focus */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+    border: 1px solid #007789;
+}
+/* CHECKBOXES */
+
+
+
+
+/* PAYMENT PART */
+.main-content .paymentpart
+{
+    width: 100%;
+}
+.main-content .paymentpart h5
+{
+    margin:0;
+    font-weight: 300;
+    padding-left:10px;
+}
+
+.main-content .paymentpart .row label
+{
+    display:block;
+    width:100%;
+    cursor:pointer;
+}
+
+form.payment-paymentmethodform .row
+{
+    margin-bottom:30px;
+}
+form.payment-paymentmethodform label
+{
+    font-weight:700;
+}
+
+form.payment-paymentmethodform input,
+form.payment-paymentmethodform select
+{
+    color:#4E4745;
+
+    width:100%;
+
+    border: 1px solid #CCCACA;
+    padding:11px 15px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+    background-color: transparent;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 24px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+form.payment-paymentmethodform img.input-bg
+{
+    display:none;
+}
+form.payment-paymentmethodform #input_cardnumber img.input-bg
+{
+    display: block;
+    height: 40px;
+    float: right;
+    margin-top: -44px;
+    margin-right: 15px;
+}
+
+form.payment-paymentmethodform #input_cardexpirationmonth
+{
+    width:50%;
+    display: block;
+    float:left;
+    padding: 0 8px 0 0;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+form.payment-paymentmethodform #input_cvc
+{
+    padding : 0 0 0 8px;
+    width:50%;
+    display:block;
+    float:right;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+form.payment-paymentmethodform select.payment-select::-ms-expand {
+    display: none;
+}
+
+form.payment-paymentmethodform select.payment-select
+{
+    vertical-align: top;
+
+    width: calc(50% - 4px);
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    padding:10px 15px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: transparent url('./down-arrow.png') no-repeat;
+    background-position-x: calc(100% - 15px);
+    background-position-y: 50%;
+}
+form.payment-paymentmethodform select.payment-select#payment-cardexpirationmonth
+{
+    float:left;
+}
+form.payment-paymentmethodform select.payment-select#payment-cardexpirationyear
+{
+    float:right;
+
+}
+
+/* submit */
+form.payment-paymentmethodform input.payment-button,
+form.payment-statuspage input.payment-button
+{
+    width: auto;
+    display:block;
+    float:right;
+    background-color: #00A8C2;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+    padding:17px 45px;
+
+    border:none;
+
+    cursor: pointer;
+
+    color:#fff;
+    font-weight:700;
+    font-size: 17px;
+
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+form.payment-paymentmethodform input.payment-button:hover
+{
+    background-color: #007789;
+}
+
+form h4
+{
+    font-weight:300;
+    margin:20px 0 30px 0;
+    font-size:30px;
+}
+
+.main-content .paymentpart
+{
+	padding:0;
+	background-color: transparent;
+	border:none;
+}
+.main-content .paymentpart form.payment-paymentmethodselection .row
+{
+	margin: 0 0 15px 0;
+	width:100%;
+	text-align: left;
+	padding-left: 15px;
+
+	background: #fff url("https://ingenico.pixfactory.eu/templates/images/right-arrow.png") no-repeat;
+	background-position-x: calc(100% - 15px);
+	background-position-y: 50%;
+}
+.main-content .paymentpart form.payment-paymentmethodselection .row:first-child
+{
+	margin:0;
+	padding-left:0;
+	background: transparent none;
+}
+.main-content .paymentpart .row:first-child h5
+{
+	margin-bottom:20px;
+	padding:0;
+}
+
+form.payment-paymentmethodform
+{
+	padding:0;
+}
+form.payment-paymentmethodform
+{
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+form.payment-paymentmethodform input,
+form.payment-paymentmethodform select.payment-select
+{
+	background-color:#fff;
+}
+form.payment-paymentmethodform #input_cardnumber img.input-bg
+{
+	position:relative;
+	right:0;
+}
+form.payment-paymentmethodform .row
+{
+	margin-bottom:15px;
+}
+.main-content .paymentpart .row label
+{
+	width:auto;
+	font-size:14px;
+	margin-bottom:5px;
+}
+.main-content .paymentpart .row.aliascreation label
+{
+	font-weight: 400;
+	line-height:16px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+	padding-left:60px;
+}
+
+form.payment-paymentmethodform #input_cvc
+{
+	margin-bottom:20px;
+}
+
+form.payment-paymentmethodform input.payment-button,
+form.payment-statuspage input.payment-button
+{
+	width:100%;
+	margin-top:10px;
+}
+
+.payment-validation-error {
+	display: block; 
+	position: relative; 
+	margin-top: 1rem; 
+	margin-bottom: 0; 
+	border: 1px solid #EA122A; 
+	background-color: #FFF3F4; 
+	color: #333333; 
+	clear: both; 
+	padding: .5rem 2rem .5rem 2rem; 
+	max-width: 44rem; 
+	line-height: 0; 
+	font-family: inherit;
+}
+
+form.payment-paymentmethodform input.payment-input-error {
+    border: 1px solid #EA122A;
+}
+
+
+
+form.payment-paymentmethodform input.payment-input-valid {
+	border: 1px solid green; 
+}
+
+
+
