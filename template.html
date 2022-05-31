@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="<payment-lang />">
+<head>
+    <meta charset="utf-8">
+    <title>
+        <payment-title />
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="<payment-tp-resource-file name="styles.min.css" />"/>
+</head>
+<body>
+    <div class="container">
+        <div class="row main-content">
+            <div class="paymentpart">
+                <payment-paymentmethod-form>
+                    <payment-input-list>
+                        <div id="input_<payment-input-id />" class="row">
+                            <payment-input-label />
+                            <payment-input-input />
+                            <payment-pm-image class="input-bg" />
+                            <payment-input-specific-content for="cvc">
+                                <div class="tooltip">
+                                    <img src="<payment-tp-resource-file name="cvc.png" />" alt="Cvc Information icon">
+                                    <span class="tooltiptext"><payment-cvc-info /></span>
+                                </div>
+                            </payment-input-specific-content>
+                            <div class="clear"></div>
+                            <payment-cobadging />
+                            <div class="error">
+                                <payment-input-error />
+                            </div>
+                        </div>
+                    </payment-input-list>
+                    <payment-alias-section>
+                        <div id="payment-aliascreation">
+                            <div class="row aliascreation">
+                                <payment-alias-input-label />
+                                <payment-alias-tooltip />
+                            </div>
+                        </div>
+                    </payment-alias-section>
+                </payment-paymentmethod-form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
