@@ -63,13 +63,13 @@ input[type="submit"],
 
 
 .main-content {
-    padding: 20px;
+    padding: 0px 20px;
 }
 
     .main-content .paymentpart,
     .main-content .orderpart {
         vertical-align: top;
-        display: inline-block;
+        display: block;
         background: #FFFFFF;
         border: 1px solid rgba(68, 69, 73, 0.15);
         margin: 0;
@@ -143,8 +143,8 @@ input[type="submit"],
         left: -2px;
         font-size: 65px;
         background: url("./check.png") no-repeat;
-        background-size: 37px 29px;
         -webkit-background-size: 37px 29px;
+        background-size: 37px 29px;
     }
     /* unchecked */
     [type="checkbox"]:not(:checked) + label:after {
@@ -330,7 +330,7 @@ form h4 {
     width: 100%;
     text-align: left;
     padding-left: 15px;
-    background: #fff url("https://ingenico.pixfactory.eu/templates/images/right-arrow.png") no-repeat;
+    background: transparent url('./right-arrow.png') no-repeat;
     background-position-x: calc(100% - 15px);
     background-position-y: 50%;
 }
@@ -378,6 +378,12 @@ form.payment-paymentmethodform {
 
 .payment-field-container {
     overflow: auto;
+}
+.payment-field-container:first-of-type{
+    padding-top: 20px;
+}
+.payment-field-container:last-of-type{
+    margin-bottom: 20px;
 }
 
 form.payment-paymentmethodform input.payment-input-error {
@@ -433,7 +439,6 @@ form.payment-paymentmethodform select.payment-input-valid {
     margin: auto auto auto 8px;
     background-image: url(./question-circle-regular.gif);
     background-repeat: no-repeat;
-    background-size: 16px;
     background-size: contain;
 }
 
@@ -561,6 +566,15 @@ form.payment-paymentmethodform #payment-cardnumber-cobadging-link {
     text-align: right;
     color: #00A8C2;
     text-decoration: none;
+}
+
+form.payment-paymentmethodform label#payment-cardnumber-cobadging-brandconfirmation {
+    float: right;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-align: right;
+    padding: .2rem 0 0 0;
+    color: #938c8c;
 }
 
 form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-label {
