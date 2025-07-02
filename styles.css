@@ -292,6 +292,18 @@ form.payment-paymentmethodform select.payment-select {
         float: right;
     }
 
+#card-brand-live-region {
+    position: absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0, 0, 0, 0);
+    white-space:nowrap;
+    border:0;
+}
+
 /* submit */
 form.payment-paymentmethodform input.payment-button,
 form.payment-statuspage input.payment-button {
@@ -404,8 +416,7 @@ form.payment-paymentmethodform select.payment-input-valid {
     border: 1px solid green;
 }
 
-.tooltip .tooltiptext {
-    visibility: hidden;
+#tooltip #tooltiptext {
     max-width: 250px;
     text-align: center;
     padding: 10px 20px;
@@ -417,11 +428,9 @@ form.payment-paymentmethodform select.payment-input-valid {
     color: #333;
     position: absolute;
     left: 51%;
-    z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
+    z-index: -1;
+    opacity: 0;
+    display: none;
 }
 
 .row.aliascreation {
@@ -430,6 +439,7 @@ form.payment-paymentmethodform select.payment-input-valid {
 }
 
 .payment-tooltip {
+    border: 1px solid transparent;
     position: absolute;
     top: 8px;
     bottom: 29px;
@@ -442,33 +452,35 @@ form.payment-paymentmethodform select.payment-input-valid {
     background-size: contain;
 }
 
-    .payment-tooltip > img {
-        width: .9em;
-        height: .9em
-    }
+.payment-tooltip:hover {
+    border: 1px solid
+}
 
-    .payment-tooltip:focus .payment-tooltip-container, .payment-tooltip:hover .payment-tooltip-container {
-        display: block;
-        opacity: 1;
-        z-index: 99
-    }
+.payment-tooltip > img {
+    width: .9em;
+    height: .9em
+}
 
 .payment-tooltip-container label {
     display: none
 }
 
 .payment-tooltip-container {
+    background-color: #fff;
+    font-family: Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 400;
+    color: #4e4745;
+    line-height: 1.1;
+    -webkit-font-smoothing: antialiased;
     position: absolute;
     bottom: 200%;
     right: 0;
     margin: 0 auto;
     padding: 1em;
     width: 240px;
-    background: #FFF;
     border: 1px solid rgba(68,69,73,.15);
     font-size: 14px;
     text-align: left;
-    line-height: initial;
     transition: .2s all;
     box-shadow: 0 0 10px rgba(0,0,0,.05);
     opacity: 0;
@@ -489,27 +501,36 @@ form.payment-paymentmethodform select.payment-input-valid {
             margin-top: 0
         }
 
-    .payment-tooltip-container p, .payment-tooltip-container ul, .payment-tooltip-container .payment-content {
-        margin: 0;
-        padding: 0;
-        text-align: left;
-        list-style-type: none;
-    }
+.payment-tooltip-container p, .payment-tooltip-container ul, .payment-tooltip-container .payment-content {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style-type: none;
+}
 
     .payment-tooltip-container div {
         text-align: center
     }
 
-.tooltip {
+#tooltip {
     display: inline-block;
+    cursor: pointer;
+    box-sizing: content-box;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    border: none;
 }
 
-    .tooltip img {
-        vertical-align: middle;
-        margin-left: 10px;
-    }
+#tooltip:hover, #tooltip:focus {
+    border: 1px solid #000000;
+}
 
-
+#tooltip img {
+    vertical-align: middle;
+}
 
 form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.brandlabel {
     display: inline-block;

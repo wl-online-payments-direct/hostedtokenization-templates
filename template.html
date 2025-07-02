@@ -18,11 +18,12 @@
                             <payment-input-label />
                             <payment-input-input />
                             <payment-pm-image class="input-bg" />
+                            <span id="card-brand-live-region" aria-live="polite"></span>
                             <payment-input-specific-content for="cvc">
-                                <div class="tooltip">
+                                <button id="tooltip" aria-expanded="false" aria-haspopup="true" aria-controls="tooltiptext">
                                     <img src="<payment-tp-resource-file name="cvc.png" />" alt="Cvc Information icon">
-                                    <span class="tooltiptext"><payment-cvc-info /></span>
-                                </div>
+                                    <span id="tooltiptext" aria-hidden="true"><payment-cvc-info /></span>
+                                </button>
                             </payment-input-specific-content>
                             <div class="clear"></div>
                             <payment-cobadging />
@@ -43,7 +44,7 @@
             </div>
         </div>
     </div>
-
+    <script src="<payment-tp-resource-file name=script.js />"></script>
 </body>
 
 </html>
