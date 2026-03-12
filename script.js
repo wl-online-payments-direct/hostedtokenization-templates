@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const aliasButton = document.getElementById('payment-tooltip-alias');
     const aliasTooltipContent = document.getElementById('payment-tooltip-container-alias');
 
+    const cobadgingButton = document.getElementById('payment-tooltip-cobadging');
+    const cobadgingTooltipContent = document.getElementById('payment-tooltip-container-cobadging');
+
     function toggleTooltip(button, tooltipContent) {
         const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
@@ -27,7 +30,23 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleTooltip(cvcButton, cvcTooltipContent);
     });
 
+    cvcTooltipContent?.addEventListener('click', function () {
+        toggleTooltip(cvcButton, cvcTooltipContent);
+    })
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            if (cvcButton.getAttribute('aria-expanded') === 'true') {
+                toggleTooltip(cvcButton, cvcTooltipContent);
+            }
+        }
+    })
+
     aliasButton?.addEventListener('click', function () {
         toggleTooltip(aliasButton, aliasTooltipContent);
+    });
+
+    cobadgingButton?.addEventListener('click', function () {
+        toggleTooltip(cobadgingButton, cobadgingTooltipContent);
     });
 });

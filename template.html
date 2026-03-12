@@ -18,12 +18,15 @@
                             <payment-input-label />
                             <payment-input-input />
                             <payment-pm-image class="input-bg" />
+                            <div id="integrated-cobadging-brandlist"></div>
                             <span id="card-brand-live-region" aria-live="polite"></span>
                             <payment-input-specific-content for="cvc">
-                                <button id="tooltip" aria-expanded="false" aria-haspopup="true" aria-controls="tooltiptext">
-                                    <img src="<payment-tp-resource-file name="cvc.png" />" alt="Cvc Information icon">
-                                    <span id="tooltiptext" aria-hidden="true"><payment-cvc-info /></span>
-                                </button>
+                                <div class="tooltip-wrapper">
+                                    <button id="tooltip" aria-expanded="false" aria-haspopup="true" aria-controls="tooltiptext" aria-describedby="tooltiptext">
+                                        <img src="<payment-tp-resource-file name="cvc.png" />" alt="Cvc Information icon">
+                                    </button>
+                                    <span id="tooltiptext" aria-hidden="true" role="tooltip"><payment-cvc-info /></span>
+                                </div>
                             </payment-input-specific-content>
                             <div class="clear"></div>
                             <payment-cobadging />

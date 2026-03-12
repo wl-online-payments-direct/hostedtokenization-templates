@@ -124,7 +124,7 @@ input[type="submit"],
         top: 0;
         width: 30px;
         height: 30px;
-        border: 1px solid #CCCACA;
+        border: 1px solid #9A9393;
         background: #fff;
         border-radius: 4px;
         margin-top: auto;
@@ -211,7 +211,7 @@ form.payment-paymentmethodform input,
 form.payment-paymentmethodform select {
     color: #4E4745;
     width: 100%;
-    border: 1px solid #CCCACA;
+    border: 1px solid #9A9393;
     padding: 11px 15px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -416,18 +416,19 @@ form.payment-paymentmethodform select.payment-input-valid {
     border: 1px solid green;
 }
 
-#tooltip #tooltiptext {
+.tooltip-wrapper #tooltiptext {
     max-width: 250px;
     text-align: center;
-    padding: 10px 20px;
+    padding: 3px 5px;
     -webkit-border-radius: .5rem;
     border-radius: .5rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     background: #F8F8F8;
     border: 1px solid #CCC;
     color: #333;
     position: absolute;
-    left: 51%;
+    top: -110%;
+    left: -46%;
     z-index: -1;
     opacity: 0;
     display: none;
@@ -450,10 +451,6 @@ form.payment-paymentmethodform select.payment-input-valid {
     background-image: url(./question-circle-regular.gif);
     background-repeat: no-repeat;
     background-size: contain;
-}
-
-.payment-tooltip:hover {
-    border: 1px solid
 }
 
 .payment-tooltip > img {
@@ -524,6 +521,14 @@ form.payment-paymentmethodform select.payment-input-valid {
     border: none;
 }
 
+.tooltip-wrapper {
+    display: inline-block;
+    width: 50%;
+    padding: 0;
+    border: none;
+    position: relative;
+}
+
 #tooltip:hover, #tooltip:focus {
     border: 1px solid #000000;
 }
@@ -538,7 +543,7 @@ form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist label.bra
     margin: 0 5px;
     margin-bottom: 8px;
     background: #ffffff;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #9a939a;
     border-radius: 4px;
     font-size: 14px;
     text-align: center;
@@ -552,7 +557,7 @@ form.payment-paymentmethodform .brandlogo {
     vertical-align: middle;
 }
 
-form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-container {
+form.payment-paymentmethodform div.payment-cobadging#payment-cardnumber-cobadging-brandlist-container {
     right: 0;
     margin: 1em 0;
     padding: 1em;
@@ -604,4 +609,70 @@ form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-label {
     font-weight: normal;
     font-family: Roboto, sans-serif;
     color: #333;
+}
+
+.main-content form.payment-paymentmethodform div#integrated-cobadging-brandlist {
+    position: relative;
+    margin-top: -40px;
+    right: 0px;
+    margin-right: 4px;
+    float: right;
+}
+
+.main-content form.payment-paymentmethodform #integrated-cobadging-brandlist label {
+    left: auto;
+    right: 8px;
+    float: right;
+    margin: 0px;
+    width: 45px;
+}
+
+.main-content form.payment-paymentmethodform #integrated-cobadging-brandlist img {
+    max-width: 39px;
+    height: auto;
+    padding: 1px;
+}
+
+.main-content form.payment-paymentmethodform #integrated-cobadging-brandlist :not(label.brandlabel:hover, label.payment-cobadging-selected) img {
+    margin: 2px;
+    opacity: 0.4;
+}
+
+.main-content form.payment-paymentmethodform #integrated-cobadging-brandlist label.brandlabel:hover img {
+    border: 2px solid #008236;
+    border-radius: 2px;
+}
+
+.main-content form.payment-paymentmethodform #integrated-cobadging-brandlist label.payment-cobadging-selected img {
+    border: 2px solid #008236;
+    border-radius: 2px;
+}
+
+form.payment-paymentmethodform label.payment-cobadging-brandlist-label-integrated#payment-cardnumber-cobadging-brandlist-label {
+    margin: 3px;
+    text-align: right;
+    width: 100%;
+    font-size: small;
+}
+
+form.payment-paymentmethodform #payment-tooltip-cobadging {
+    position: static;
+    margin: 2px;
+    height: 18px;
+    width: 18px;
+}
+
+form.payment-paymentmethodform #payment-tooltip-container-cobadging {
+    right: 10%;
+    top: 120px;
+    height: fit-content;
+}
+#payment-cardexpirationmonth-field-container fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    min-inline-size: 0;
+}
+#payment-cardexpirationmonth-field-container legend.legend-visually-hidden {
+    display: none;
 }
