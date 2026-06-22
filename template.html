@@ -9,45 +9,52 @@
     <link rel="stylesheet" href="<payment-tp-resource-file name="styles.min.css" />"/>
 </head>
 <body>
-    <div class="container">
-        <div class="row main-content">
-            <div class="paymentpart">
-                <payment-paymentmethod-form>
-                    <payment-input-list>
-                        <div id="input_<payment-input-id />" class="row">
-                            <payment-input-label />
-                            <payment-input-input />
-                            <payment-pm-image class="input-bg" />
-                            <div id="integrated-cobadging-brandlist"></div>
-                            <span id="card-brand-live-region" aria-live="polite"></span>
-                            <payment-input-specific-content for="cvc">
-                                <div class="tooltip-wrapper">
-                                    <button id="tooltip" aria-expanded="false" aria-haspopup="true" aria-controls="tooltiptext" aria-describedby="tooltiptext">
-                                        <img src="<payment-tp-resource-file name="cvc.png" />" alt="Cvc Information icon">
-                                    </button>
-                                    <span id="tooltiptext" aria-hidden="true" role="tooltip"><payment-cvc-info /></span>
+    <main role="main">
+        <div class="container">
+            <div class="row main-content">
+                <div class="paymentpart">
+                    <payment-paymentmethod-form>
+                        <div id="required-fields-disclaimer">
+                            <p>
+                                <payment-required-fields-text />
+                            </p>
+                        </div>
+                        <payment-input-list>
+                            <div id="input_<payment-input-id />" class="row">
+                                <payment-input-label />
+                                <payment-input-input />
+                                <payment-pm-image class="input-bg" />
+                                <div id="integrated-cobadging-brandlist"></div>
+                                <span id="card-brand-live-region" aria-live="polite"></span>
+                                <payment-input-specific-content for="cvc">
+                                    <div class="tooltip-wrapper">
+                                        <button id="tooltip" aria-expanded="false" aria-haspopup="true" aria-controls="tooltiptext" aria-describedby="tooltiptext">
+                                            <img src="<payment-tp-resource-file name=" cvc.png" />" alt="<payment-cvc-info-button-description />">
+                                        </button>
+                                        <span id="tooltiptext" aria-hidden="true" role="tooltip"><payment-cvc-info /></span>
+                                    </div>
+                                </payment-input-specific-content>
+                                <div class="clear"></div>
+                                <payment-cobadging />
+                                <div class="error">
+                                    <payment-input-error />
                                 </div>
-                            </payment-input-specific-content>
-                            <div class="clear"></div>
-                            <payment-cobadging />
-                            <div class="error">
-                                <payment-input-error />
                             </div>
-                        </div>
-                    </payment-input-list>
-                    <payment-alias-section>
-                        <div id="payment-aliascreation">
-                            <div class="row aliascreation">
-                                <payment-alias-input-label />
-                                <payment-alias-tooltip />
+                        </payment-input-list>
+                        <payment-alias-section>
+                            <div id="payment-aliascreation">
+                                <div class="row aliascreation">
+                                    <payment-alias-input-label />
+                                    <payment-alias-tooltip />
+                                </div>
                             </div>
-                        </div>
-                    </payment-alias-section>
-                </payment-paymentmethod-form>
+                        </payment-alias-section>
+                    </payment-paymentmethod-form>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="<payment-tp-resource-file name=script.js />"></script>
+        <script src="<payment-tp-resource-file name=script.js />"></script>
+    </main>
 </body>
 
 </html>

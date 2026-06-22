@@ -144,7 +144,7 @@ input[type="submit"],
         font-size: 65px;
         background: url("./check.png") no-repeat;
         -webkit-background-size: 37px 29px;
-        background-size: 37px 29px;
+        background-size: 35px 30px;
     }
     /* unchecked */
     [type="checkbox"]:not(:checked) + label:after {
@@ -204,6 +204,10 @@ input[type="submit"],
     }
 
 form.payment-paymentmethodform label {
+    font-weight: 700;
+}
+
+#required-fields-disclaimer {
     font-weight: 700;
 }
 
@@ -288,20 +292,39 @@ form.payment-paymentmethodform select.payment-select {
         float: left;
     }
 
-    form.payment-paymentmethodform select.payment-select#payment-cardexpirationyear {
-        float: right;
-    }
+form.payment-paymentmethodform input.payment-input#payment-cardexpirationmonth {
+    float: left;
+    width: calc(50% - 4px);
+}
+
+form.payment-paymentmethodform label.payment-label#payment-cardexpirationmonth-label {
+    float: left;
+}
+
+form.payment-paymentmethodform select.payment-select#payment-cardexpirationyear {
+    float: right;
+}
+
+form.payment-paymentmethodform input.payment-input#payment-cardexpirationyear {
+    float: right;
+    width: calc(50% - 4px);
+}
+
+form.payment-paymentmethodform label.payment-label#payment-cardexpirationyear-label {
+    float: right;
+    width: calc(50% - 4px);
+}
 
 #card-brand-live-region {
     position: absolute;
-    width:1px;
-    height:1px;
-    padding:0;
-    margin:-1px;
-    overflow:hidden;
-    clip:rect(0, 0, 0, 0);
-    white-space:nowrap;
-    border:0;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* submit */
@@ -391,12 +414,14 @@ form.payment-paymentmethodform {
 .payment-field-container {
     overflow: auto;
 }
-.payment-field-container:first-of-type{
-    padding-top: 20px;
-}
-.payment-field-container:last-of-type{
-    margin-bottom: 20px;
-}
+
+    .payment-field-container:first-of-type {
+        padding-top: 20px;
+    }
+
+    .payment-field-container:last-of-type {
+        margin-bottom: 20px;
+    }
 
 form.payment-paymentmethodform input.payment-input-error {
     border: 1px solid #EA122A;
@@ -451,12 +476,13 @@ form.payment-paymentmethodform select.payment-input-valid {
     background-image: url(./question-circle-regular.gif);
     background-repeat: no-repeat;
     background-size: contain;
+    background-color: transparent;
 }
 
-.payment-tooltip > img {
-    width: .9em;
-    height: .9em
-}
+    .payment-tooltip > img {
+        width: .9em;
+        height: .9em
+    }
 
 .payment-tooltip-container label {
     display: none
@@ -498,14 +524,14 @@ form.payment-paymentmethodform select.payment-input-valid {
             margin-top: 0
         }
 
-.payment-tooltip-container p, .payment-tooltip-container ul, .payment-tooltip-container .payment-content {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    list-style-type: none;
-}
+    .payment-tooltip-container p, .payment-tooltip-container ul, .payment-tooltip-container .payment-content {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        list-style-type: none;
+    }
 
     .payment-tooltip-container div {
         text-align: center
@@ -667,12 +693,29 @@ form.payment-paymentmethodform #payment-tooltip-container-cobadging {
     top: 120px;
     height: fit-content;
 }
+
 #payment-cardexpirationmonth-field-container fieldset {
     border: 0;
     margin: 0;
     padding: 0;
     min-inline-size: 0;
 }
+
 #payment-cardexpirationmonth-field-container legend.legend-visually-hidden {
-    display: none;
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+}
+
+@media (max-width: 295px) {
+    form.payment-paymentmethodform #input_cardnumber img.input-bg {
+        display: block;
+        height: 20px;
+        float: right;
+        margin-top: -35px;
+        margin-right: 7px;
+        position: relative;
+        right: 0;
+    }
 }
