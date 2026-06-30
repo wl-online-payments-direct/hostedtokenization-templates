@@ -645,12 +645,20 @@ form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-label {
     float: right;
 }
 
-.main-content form.payment-paymentmethodform #integrated-cobadging-brandlist label {
+.main-content form.payment-paymentmethodform #integrated-cobadging-brandlist label.cawl-override {
     left: auto;
     right: 8px;
     float: right;
     margin: 0px;
     width: 45px;
+}
+
+.main-content form.payment-paymentmethodform #integrated-cobadging-brandlist label:not(.cawl-override) {
+    left: auto;
+    right: 8px;
+    float: right;
+    margin: auto;
+    padding: 0px 3px;
 }
 
 .main-content form.payment-paymentmethodform #integrated-cobadging-brandlist img {
@@ -659,7 +667,13 @@ form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-label {
     padding: 1px;
 }
 
-.main-content form.payment-paymentmethodform #integrated-cobadging-brandlist :not(label.brandlabel:hover, label.payment-cobadging-selected) img {
+.main-content form.payment-paymentmethodform #integrated-cobadging-brandlist :not(label.brandlabel:hover, label.payment-cobadging-selected) img:not(.cawl-override) {
+    margin: 0px 1px;
+    border: 1px solid #808080;
+    border-radius: 2px;
+}
+
+.main-content form.payment-paymentmethodform #integrated-cobadging-brandlist :not(label.brandlabel:hover, label.payment-cobadging-selected) img.cawl-override {
     margin: 2px;
     opacity: 0.4;
 }
@@ -672,6 +686,35 @@ form.payment-paymentmethodform #payment-cardnumber-cobadging-brandlist-label {
 .main-content form.payment-paymentmethodform #integrated-cobadging-brandlist label.payment-cobadging-selected img {
     border: 2px solid #008236;
     border-radius: 2px;
+}
+
+
+form #integrated-cobadging-brandlist .payment-cobadging-selected ~ .cobadging-span0::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    right: 50px;
+    width: 10px;
+    height: 9px;
+    border-radius: 50%;
+    border: 1px solid #008236;
+    background: url(./check-cobadging.png) no-repeat;
+    background-size: contain;
+    background-color: #fff;
+}
+
+form #integrated-cobadging-brandlist .cobadging-span0 ~ .payment-cobadging-selected ~ .cobadging-span1::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    right: -2px;
+    width: 10px;
+    height: 9px;
+    border-radius: 50%;
+    border: 1px solid #008236;
+    background: url(./check-cobadging.png) no-repeat;
+    background-size: contain;
+    background-color: #fff;
 }
 
 form.payment-paymentmethodform label.payment-cobadging-brandlist-label-integrated#payment-cardnumber-cobadging-brandlist-label {
